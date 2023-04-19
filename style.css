@@ -8,6 +8,23 @@
        url('/fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+body {
+  border: solid red 3px;
+  width: auto;
+  max-width: 80rem;
+  height: auto;
+  /*      top right bottom left  */
+  margin: 0px calc(max(80rem, 100vw) - 80rem) 0px calc(max(80rem, 100vw) - 80rem);
+  padding: 1rem;
+}
+
 header {
   font-family: 'Roboto', sans-serif;
+  padding: 5px 25px 30px 25px;
+  border: solid 3px blue;
+}
+
+article {
+  padding: 50px;
+  border: solid 3px green;
 }
