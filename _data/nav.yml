@@ -1,10 +1,14 @@
 items:
 
-- url: /
+- text: Home
+  url: /
 
-- url: /about
+- text: About
+  url: /about
 
-- url: /blog
+- text: Blog
+  url: /blog
 
-- url: /links
+- text: Links
+  url: /links
 

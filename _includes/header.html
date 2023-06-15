@@ -1,9 +1,8 @@
 <header>
-  <h1>{{ site.title }}</h1>
+  <h1>PureAsbestos</h1>
   <nav>
     {% for item in site.data.nav.items %}
-      {% assign itempage = site.pages | where: "path", item.url | first %}
-      <a href="{{ item.url }}">{{ itempage.title }}</a>
+      <a href="{{ item.url }}">{{ item.text }}</a>
     {% endfor %}
   </nav>
 </header>
