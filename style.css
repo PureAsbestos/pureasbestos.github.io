@@ -29,3 +29,15 @@ pre {
   font-size: 1em;
 }
 
+main.notfound {
+  text-align: center;
+  padding: 50px;
+  border: solid 3px green;
+  font-family: 'Lato', sans-serif;
+}
+
+.notfound h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+}
