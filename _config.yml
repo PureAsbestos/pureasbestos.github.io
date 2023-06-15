@@ -9,3 +9,6 @@ defaults:
       path: "blog"
     values:
       layout: "post"
+
+
+permalink: /:categories/:year/:month/:day/:title #:output_ext
