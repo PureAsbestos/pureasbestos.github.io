@@ -6,7 +6,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fermentum sollic
 
 Maecenas auctor sagittis magna, ut laoreet sem cursus nec. Nulla faucibus elit quis libero tincidunt, vitae rhoncus nibh hendrerit. Morbi lacinia maximus arcu quis consequat.
 
-```python3
+```python
 # Program to display the Fibonacci sequence up to n-th term
 
 nterms = int(input("How many terms? "))
@@ -20,12 +20,12 @@ if nterms &lt;= 0:
    print("Please enter a positive integer")
 # if there is only one term, return n1
 elif nterms == 1:
-   print("Fibonacci sequence upto",nterms,":")
+   print("Fibonacci sequence up to ", nterms, ":")
    print(n1)
 # generate fibonacci sequence
 else:
    print("Fibonacci sequence:")
-   while count &lt; nterms:
+   while count < nterms:
        print(n1)
        nth = n1 + n2
        # update values
