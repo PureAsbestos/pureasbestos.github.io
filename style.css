@@ -61,6 +61,7 @@ body {
 
 header {
   font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   padding: 5px 25px 30px 25px;
   border: solid 3px blue;
 }
@@ -68,11 +69,11 @@ header {
 article {
   padding: 50px;
   border: solid 3px green;
-  font-family: 'Lato';
+  font-family: 'Lato', sans-serif;
 }
 
 pre {
-  font-family: 'Courier New', 'Courier', monospace;
-  font-size: 0.9em;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
 }
 
