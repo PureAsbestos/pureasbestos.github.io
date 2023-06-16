@@ -1,5 +1,11 @@
+@import "theme-colors.css";
 @import "fonts.css";
 @import "syntax-highlight.css";
+
+html {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-fg-color);
+}
 
 body {
   border: solid red 3px;

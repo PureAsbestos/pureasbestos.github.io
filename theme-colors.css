@@ -1,0 +1,15 @@
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    :root {
+      --primary-bg-color: #d9cdbd;
+      --primary-fg-color: #110d16;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+      --primary-bg-color: #110d16;
+      --primary-fg-color: #d9cdbd;
+    }
+}
