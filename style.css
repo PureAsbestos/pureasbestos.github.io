@@ -7,6 +7,20 @@ html {
   color: var(--primary-fg-color);
 }
 
+a:link {
+  color: var(--fresh-link-color);
+} a:hover {
+  color: var(--hover-link-color);
+} a:active {
+  color: var(--active-link-color);
+} a:visited {
+  color: var(--visited-link-color);
+} a:visited:hover {
+  color: var(--visited-hover-link-color);
+} a:visited:active {
+  color: var(--visited-active-link-color);
+}
+
 body {
   border: solid red 3px;
   width: auto;

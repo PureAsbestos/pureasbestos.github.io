@@ -1,15 +1,27 @@
 /* Light mode */
 @media (prefers-color-scheme: light) {
-    :root {
-      --primary-bg-color: #d9cdbd;
-      --primary-fg-color: #110d16;
-    }
+  :root {
+    --primary-bg-color:          #f2e9dc;
+    --primary-fg-color:          #110d16;
+    --fresh-link-color:          #1757e3;
+    --hover-link-color:          #197cf9;
+    --active-link-color:         #6b66ff;
+    --visited-link-color:        #a237b7;
+    --visited-hover-link-color:  #c148d2;
+    --visited-active-link-color: #d43386;
+  }
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    :root {
-      --primary-bg-color: #110d16;
-      --primary-fg-color: #d9cdbd;
-    }
+  :root {
+    --primary-bg-color:          #110d16;
+    --primary-fg-color:          #d9cdbd;
+    --fresh-link-color:          #47a6ff;
+    --hover-link-color:          #255ed5;
+    --active-link-color:         #3034ff;
+    --visited-link-color:        #b57cd9;
+    --visited-hover-link-color:  #b05fbb;
+    --visited-active-link-color: #a248b4;
+  }
 }
