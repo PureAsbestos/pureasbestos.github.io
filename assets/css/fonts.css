@@ -1,13 +1,16 @@
 ---
 ---
-{{ site.fonts | jsonify }}
-{% for font in site.fonts %}
-  {% if font.extname == 'woff' %}
+
+
+{% assign fonts = site.collections | where: "label", "fonts" | first %}
+{% for font in fonts.files %}{% capture fontfacecss %}
+  {% if font.extname == '.woff' %}
     {% assign shortname = font.basename | split: '-v' | first %}
     {% assign restname = font.basename | split: '-v' | last | split: '-' %}
     {% assign charset = restname | shift | reverse | shift | reverse | join: '-' %}
     {% assign fonttype = restname | last %}
-    {% capture titlecase %}{% for word in shortname | split: '-' %}{{ word | capitalize }}{% endfor %}{% endcapture %}
+    {% assign splitname = shortname | split: '-' %}
+    {% capture titlecase %}{% for word in splitname %}{{ word | capitalize }} {% endfor %}{% endcapture %}
     {% assign fontname = shortname | append: '-' | append: fonttype %}
     {% if fonttype contains '700' %}
       {% assign fontstyle = fonttype | remove_first: '700' %}
@@ -20,11 +23,11 @@
     /* {{ fontname }} - {{ charset }} */
     @font-face {
       font-display: swap;
-      font-family: '{{ titlecase | join }}';
+      font-family: '{{ titlecase | rstrip }}';
       font-style: normal;
       font-weight: {{ fontweight }};
       src: url('{{ font.path }}2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
            url('{{ font.path }}') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
   {% endif %}
-{% endfor %}
+{% endcapture %}{{ fontfacecss | lstrip }}{% endfor %}
