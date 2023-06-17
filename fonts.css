@@ -2,7 +2,7 @@
 ---
 
 {% for font in site.fonts %}
-  {% if font.extname == 'woff'}
+  {% if font.extname == 'woff' %}
     {% assign shortname = font.basename | split: '-v' | first %}
     {% assign restname = font.basename | split: '-v' | last | split: '-' %}
     {% assign charset = restname | shift | reverse | shift | reverse | join: '-' %}
