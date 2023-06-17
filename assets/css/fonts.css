@@ -1,6 +1,6 @@
 ---
 ---
-
+{{ site.fonts | jsonify }}
 {% for font in site.fonts %}
   {% if font.extname == 'woff' %}
     {% assign shortname = font.basename | split: '-v' | first %}
