@@ -9,11 +9,12 @@
     {% assign fonttype = restname | last %}
     {% capture titlecase %}{% for word in shortname | split: '-' %}{{ word | capitalize }}{% endfor %}{% endcapture %}
     {% assign fontname = shortname | append: '-' | append: fonttype %}
-    {% assign fontstyle = fonttype %}
-    {% assign fontweight = '400'}
     {% if fonttype contains '700' %}
       {% assign fontstyle = fonttype | remove_first: '700' %}
       {% assign fontweight = '700' %}
+    {% else %}
+      {% assign fontstyle = fonttype %}
+      {% assign fontweight = '400' %}
     {% endif %}
 
     /* {{ fontname }} - {{ charset }} */
