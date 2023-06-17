@@ -1,49 +1,29 @@
-/* lato-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/lato-v23-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/lato-v23-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+---
+---
 
-/* lato-italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: url('../fonts/lato-v23-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/lato-v23-latin-italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+{% for font in site.fonts %}
+  {% if font.extname == 'woff'}
+    {% assign shortname = font.basename | split: '-v' | first %}
+    {% assign restname = font.basename | split: '-v' | last | split: '-' %}
+    {% assign charset = restname | shift | reverse | shift | reverse | join: '-' %}
+    {% assign fonttype = restname | last %}
+    {% capture titlecase %}{% for word in shortname | split: '-' %}{{ word | capitalize }}{% endfor %}{% endcapture %}
+    {% assign fontname = shortname | append: '-' | append: fonttype %}
+    {% assign fontstyle = fonttype %}
+    {% assign fontweight = '400'}
+    {% if fonttype contains '700' %}
+      {% assign fontstyle = fonttype | remove_first: '700' %}
+      {% assign fontweight = '700' %}
+    {% endif %}
 
-/* lato-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/lato-v23-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/lato-v23-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* lato-700italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: url('../fonts/lato-v23-latin-700italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/lato-v23-latin-700italic.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* roboto-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/roboto-v30-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-       url('../fonts/roboto-v30-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    /* {{ fontname }} - {{ charset }} */
+    @font-face {
+      font-display: swap;
+      font-family: '{{ titlecase | join }}';
+      font-style: normal;
+      font-weight: 400;
+      src: url('{{ font.path }}2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+           url('{{ font.path }}') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  {% endif %}
+{% endfor %}

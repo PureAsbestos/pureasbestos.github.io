@@ -16,3 +16,6 @@ defaults:
 permalink: /:categories/:year/:month/:day/:title #:output_ext
 
 title: "PureAsbestos.com"
+
+collections:
+  - fonts
