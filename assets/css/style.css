@@ -1,28 +1,41 @@
-@import "theme-colors.css";
+@import "theme-styling.css";
 @import "fonts.css";
 @import "syntax-highlight.css";
 
 html {
   background-color: var(--primary-bg-color);
-  color: var(--primary-fg-color);
+  color: var(--primary-text-color);
 }
 
 a:link {
   color: var(--fresh-link-color);
+  text-decoration-line: none;
 } a:hover {
   color: var(--hover-link-color);
+  text-decoration-line: underline;
 } a:active {
   color: var(--active-link-color);
+  text-decoration-line: underline;
 } a:visited {
   color: var(--visited-link-color);
+  text-decoration-line: none;
 } a:visited:hover {
   color: var(--visited-hover-link-color);
+  text-decoration-line: underline;
 } a:visited:active {
   color: var(--visited-active-link-color);
+  text-decoration-line: underline;
 }
 
+
+h1 {
+    font-family: var(--title-font);
+    font-weight: 700;
+}
+
+
 body {
-  border: solid red 3px;
+  background-color: var(--content-bg-color);
   width: auto;
   max-width: 80rem;
   height: auto;
@@ -32,32 +45,58 @@ body {
 }
 
 header {
-  font-family: 'Roboto', sans-serif;
+  background-color: var(--highlight-bg-color);
+  font-family: var(--title-font);
   font-weight: 700;
   padding: 5px 25px 30px 25px;
-  border: solid 3px blue;
 }
 
-article {
+main {
   padding: 50px;
-  border: solid 3px green;
-  font-family: 'Lato', sans-serif;
+  border: solid 3px var(--highlight-bg-color);
+  font-family: var(--writing-font);
+}
+
+main p {
+  line-height: 150%;
 }
 
 pre {
-  font-family: 'Courier Prime', 'Courier New', monospace;
+  background-color: var(--code-bg-color);
+  padding: 1em;
+}
+code, .rouge-code {
+  font-family: var(--code-font);
   font-size: 1em;
 }
+pre.lineno, td.rouge-code pre {
+  margin: 0;
+}
+pre.highlight {
+  padding: 0;
+}
+pre.lineno {
+  color: var(--lineno-text-color);
+}
+
+/*pre {
+    counter-reset: line;
+}
+code span {
+    counter-increment: line;
+}
+code span:before {
+    content: counter(line);
+    -webkit-user-select: none;
+}*/
+
+
 
 main.notfound {
   text-align: center;
   padding: 50px;
-  border: solid 3px green;
-  font-family: 'Lato', sans-serif;
 }
 
 .notfound h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
     font-size: 4em;
 }

@@ -10,7 +10,8 @@
     {% assign charset = restname | shift | reverse | shift | reverse | join: '-' %}
     {% assign fonttype = restname | last %}
     {% assign splitname = shortname | split: '-' %}
-    {% capture titlecase %}{% for word in splitname %}{{ word | capitalize }} {% endfor %}{% endcapture %}
+    {% capture titlecase %}{% for word in splitname %}{% assign upword = word | upcase%}{% if word != upword %}{{ word | capitalize }}{% else %}{{ word }}{% endif %} {% endfor %}{% endcapture %}
+    {% assign titlecase = titlecase | rstrip %}
     {% assign fontname = shortname | append: '-' | append: fonttype %}
     {% if fonttype contains '700' %}
       {% assign fontstyle = fonttype | remove_first: '700' %}
@@ -19,15 +20,18 @@
       {% assign fontstyle = fonttype %}
       {% assign fontweight = '400' %}
     {% endif %}
+    {% if fontstyle == "regular" or fontstyle == "" %}
+      {% assign fontstyle = "normal" %}
+    {% endif %}
 
-    /* {{ fontname }} - {{ charset }} */
-    @font-face {
-      font-display: swap;
-      font-family: '{{ titlecase | rstrip }}';
-      font-style: normal;
-      font-weight: {{ fontweight }};
-      src: url('{{ font.path }}2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
-           url('{{ font.path }}') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
-  {% endif %}
-{% endcapture %}{{ fontfacecss | lstrip }}{% endfor %}
+/* {{ fontname }}{% if charset != "" %} - {{ charset }}{% endif %} */
+@font-face {
+  font-display: swap;
+  font-family: '{{ titlecase }}';
+  font-style: {{ fontstyle }};
+  font-weight: {{ fontweight }};
+  src: url('../../fonts/{{ font.name }}2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../../fonts/{{ font.name }}') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+{% endif %}{% endcapture %}{{ fontfacecss | lstrip }}{% endfor %}

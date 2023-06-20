@@ -32,6 +32,17 @@ else:
        n1 = n2
        n2 = nth
        count += 1
+
+class Foo(something):
+   bar = ""
+   def beans(bacon, lard="food"):
+      bar = bacon + beans
+      Foo.beans()
+      eggs = Foo()
+
+   def __init__(self):
+      pass
+
 ```
 
 Etiam vehicula vestibulum leo sit amet accumsan. Proin sapien enim, dapibus in nisi fringilla, dapibus iaculis ante. Maecenas semper eros ipsum, efficitur bibendum sem pellentesque ac. Nam id sapien leo. Aliquam imperdiet, ex quis commodo eleifend, augue sapien aliquet enim, ac dictum enim ante dapibus massa.
