@@ -33,10 +33,13 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     default_lang: html
-    css_class: 'highlight'
+    # css_class: 'highlight'
     span:
       line_numbers: false
     block:
-      line_numbers: true
-      start_line: 1
+      formatter: HTMLLinewise
+      wrap: true
+      tag_name: span
+      class: line
+
 
