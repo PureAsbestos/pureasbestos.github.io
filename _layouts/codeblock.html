@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% assign lines = content | split: '
+' %}{% assign incode = 0 -%}{% for line in content %}<span>{{ incode }}</span>{% if line contains '<code>' %}{% assign incode = 1 %}{{ line | replace_first: '<code>', '<code><span class="line">' }}
+</span>{%- elsif line contains '</code>' -%}{% assign incode = 0 %}<span class="line">{{ line | replace_first: '</code>', '</span></code>' }}
+{% elsif incode == 1 %}<span class="line">{{ line }}
+</span>{% else %}{{ line }}{% endif %}{% endfor %}
