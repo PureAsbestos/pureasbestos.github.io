@@ -75,6 +75,7 @@ pre.lineno, td.rouge-code pre {
 }
 pre.highlight {
   padding: 0;
+  overflow-x: auto;
 }
 pre.lineno {
   color: var(--lineno-text-color);
