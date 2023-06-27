@@ -37,8 +37,8 @@ kramdown:
     span:
       line_numbers: false
     block:
-      formatter: HTMLLinewise
-      wrap: true
+      # formatter: HTMLLinewise
+      # wrap: true
       tag_name: span
       class: line
 
