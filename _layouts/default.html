@@ -1,4 +1,10 @@
 ---
 layout: basic
+
+# Preprocesses HTML generated from MD to add line spans to code blocks
+# This allows for pure CSS line numbering
+
+# TODO: Make sure this doesn't interfere with surrounding things, say HTML 'figure' tags for example
+
 ---
 {% include patch_codeblocks.html html_input=content %}
