@@ -30,10 +30,11 @@ collections:
 markdown: kramdown
 highlighter: rouge
 kramdown:
-  input: GFM
-  # syntax_highlighter_opts:
-    # default_lang: html
-    # css_class: 'highlight'
+  #input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: 'highlight'
+    line_numbers: false
     # span:
       # line_numbers: false
     # block:
