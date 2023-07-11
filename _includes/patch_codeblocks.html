@@ -1,5 +1,4 @@
-{% assign lines = include.html_input | split: '
-' %}{% for line in lines %}{{ line | inspect }}
+{% assign lines = include.html_input | split: '\n' %}{% for line in lines %}{{ line | inspect }}
 
 
 
