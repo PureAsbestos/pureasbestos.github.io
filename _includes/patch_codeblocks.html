@@ -1,5 +1,12 @@
 {% assign lines = include.html_input | split: '
 ' %}{% for line in lines %}{{ line | inspect }}
+
+
+
+
+
+
+
 {% endfor %}{% comment %}{% assign incode = 0 %}{% for line in lines %}{% if line contains '<pre class="highlight"><code>' %}{% assign incode = 1 %}{% assign latterpart = line | split: '<pre class="highlight"><code>' | last %}<pre class="highlight"><code>{% include _codepatch_lineparser.html line=latterpart %}{% elsif incode == 1 and line contains '</code></pre>' %}{% assign incode = 0 %}{% assign formerpart = line | split: '</code></pre>' | first %}{% if formerpart != '' %}{% include _codepatch_lineparser.html line=formerpart %}{% endif %}</code></pre>
 {% elsif incode == 1 %}{% include _codepatch_lineparser.html line=line %}{% else %}{{ line }}
 {% endif %}{% endfor %}{% endcomment %}
