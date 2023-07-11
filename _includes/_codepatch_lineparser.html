@@ -1,0 +1,3 @@
+{% assign startpart = include.line | slice: 0, 7 %}{% if startpart == '</span>' %}{% assign rest = include.line | slice: 7, include.line.size %}</span><span class="line">{{ rest }}
+</span>{% else %}<span class="line">{{ include.line }}
+</span>{% endif %}
