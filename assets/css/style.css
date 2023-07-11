@@ -38,10 +38,11 @@ h1 {
 .body {
   background-color: var(--content-bg-color);
   width: auto;
-  max-width: 80rem;
+  max-width: 61rem;
   height: auto;
   /*      top right bottom left  */
-  margin: 0px calc(max(80rem, 100vw) - 80rem) 0px calc(max(80rem, 100vw) - 80rem);
+/*   margin: 0px calc(max(80rem, 100vw) - 80rem) 0px calc(max(80rem, 100vw) - 80rem); */
+  margin: auto;
   padding: 1rem;
 }
 
@@ -64,8 +65,20 @@ main p {
 
 
 footer {
-  margin: 0px calc(max(80rem, 100vw) - 80rem) 0px calc(max(80rem, 100vw) - 80rem);
+  max-width: 61rem;
+  margin: auto;
+/*   margin: 0px calc(max(80rem, 100vw) - 80rem) 0px calc(max(80rem, 100vw) - 80rem); */
   padding: 2rem;
+  line-height: 150%;
+  color: var(--primary-text-color);
+  font-family: var(--code-font);
+}
+
+footer > hr {
+  margin: 1.75rem;
+}
+#footer-buttons {
+  margin-bottom: 2rem;
 }
 
 .kofi-button {
@@ -76,35 +89,34 @@ footer {
 }
 
 
+
+
 pre {
-  background-color: var(--code-bg-color);
-  padding: 1em;
-}
-code, .rouge-code {
-  font-family: var(--code-font);
-  font-size: 1em;
-}
-pre.lineno, td.rouge-code pre {
-  margin: 0;
-}
-pre.highlight {
-  padding: 0;
+  padding: 0.5rem;
+/*  padding-top: 1rem;*/
   overflow-x: auto;
 }
-pre.lineno {
-  color: var(--lineno-text-color);
+code {
+  font-family: var(--code-font);
+  font-size: 0.9rem;
 }
 
-/*pre {
-    counter-reset: line;
+
+/* Line Numbers */
+pre.highlight {
+  counter-reset: line;
 }
-code span {
+code span.line {
     counter-increment: line;
 }
-code span:before {
-    content: counter(line);
-    -webkit-user-select: none;
-}*/
+code span.line:before {
+  display:inline-block;
+  width: 1.8rem;
+  padding-right: 1.5rem;
+  content: counter(line);
+  text-align: right;
+  -webkit-user-select: none;
+}
 
 
 
@@ -114,5 +126,5 @@ main.notfound {
 }
 
 .notfound h1 {
-    font-size: 4em;
+    font-size: 4rem;
 }

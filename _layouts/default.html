@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang='en-US'>
-  {% include head.html %}
-  
-  <body>
-    <div class='body'>
-      {% include header.html %}
-      <main>
-        <article>
-          {{ content }}
-        </article>
-      </main>
-    </div>
-    {% include footer.html %}
-  </body>
+---
+layout: basic
 
-</html>
+# Preprocesses HTML generated from MD to add line spans to code blocks
+# This allows for pure CSS line numbering
+
+# TODO: Make sure this doesn't interfere with surrounding things, say HTML 'figure' tags for example
+
+---
+{% assign lines = content | split: '
+' %}{% assign incode = 0 %}{% for line in lines %}{% if line contains '<pre class="highlight"><code>' %}{% assign divless = line | split: '<div class="highlight">' | last %}{% assign incode = 1 %}{{ divless | replace_first: '<pre class="highlight"><code>', '<pre class="highlight"><code><span class="line">' }}
+</span>{% elsif line == '</code></pre></div></div>' %}{% assign incode = 0 %}</code></pre>{% elsif line contains '</code></pre>' %}{% assign incode = 0 %}<span class="line">{{ line | replace_first: '</code></pre>', '</span></code></pre>' }}
+{% elsif incode == 1 %}{% assign startpart = line | slice: 0, 7 %}{% if startpart == '</span>' %}{% assign linesize = line | size %}</span><span class="line">{{ line | slice: 7, linesize }}
+</span>{% else %}<span class="line">{{ line }}
+</span>{% endif %}{% else %}{{ line }}
+{% endif %}{% endfor %}

@@ -1,7 +1,9 @@
 /* Light mode */
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-bg-color:          #f2e9dc;
+    --primary-bg-color:          #ebd8be;
+    --content-bg-color:          #fbf5ec;
+    --highlight-bg-color:        #f7ead9;
     --primary-text-color:        #110d16;
     --fresh-link-color:          #1757e3;
     --hover-link-color:          #197cf9;
@@ -25,8 +27,6 @@
     --visited-link-color:        #b57cd9;
     --visited-hover-link-color:  #b05fbb;
     --visited-active-link-color: #a248b4;
-    --code-bg-color:             #09060d;
-    --lineno-text-color:         #4c3e57;
   }
 }
 

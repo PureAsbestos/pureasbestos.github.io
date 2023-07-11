@@ -31,15 +31,15 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
-  syntax_highlighter_opts:
-    default_lang: html
+  # syntax_highlighter_opts:
+    # default_lang: html
     # css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      # formatter: HTMLLinewise
+    # span:
+      # line_numbers: false
+    # block:
+      # formatter: Rouge::Formatters::HTMLLinewise
       # wrap: true
-      tag_name: span
-      class: line
+      # tag_name: span
+      # class: line
 
 
