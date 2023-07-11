@@ -1,4 +1,4 @@
-{% assign lines = include.html_input | split: '\n' %}{% for line in lines %}{{ line | inspect }}
+{% assign lines = include.html_input | newline_to_br | split: '<br />' %}{% for line in lines %}{{ line | inspect }}
 
 
 
