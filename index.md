@@ -23,7 +23,7 @@ count = 0
 
 # check if the number of terms is valid
 if nterms <= 0:
-   print("Please enter a positive integer")
+   print("Please enter\na positive integer")
 # if there is only one term, return n1
 elif nterms == 1:
    print("Fibonacci sequence up to ", nterms, ":")

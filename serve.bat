@@ -1,2 +1,2 @@
-@bundle _2.1.4_ exec jekyll serve
+@bundle exec jekyll serve
 @cmd -k
