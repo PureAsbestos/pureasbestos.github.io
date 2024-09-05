@@ -7,4 +7,4 @@ layout: basic
 # TODO: Make sure this doesn't interfere with surrounding things, say HTML 'figure' tags for example
 
 ---
-{% assign text_arr = content | split: '' %}{% for char in text_arr %}{{ char | uri_escape }}{% endfor %}
+{% include patch_codeblocks.html html_input=content %}
