@@ -7,6 +7,4 @@ layout: basic
 # TODO: Make sure this doesn't interfere with surrounding things, say HTML 'figure' tags for example
 
 ---
-{% capture processed_results %}{% assign inp_param = content | replace: '
-', 'THIS_IS_A_NEWLINE_bc2f92162a6788f3b7096f7d4d0d67d0' %}{% include patch_codeblocks.html html_input=inp_param %}{% endcapture %}{{ processed_results | replace: 'THIS_IS_A_NEWLINE_bc2f92162a6788f3b7096f7d4d0d67d0', '
-'}}
+{% assign text_arr = content | split: '' %}{% for char in text_arr %}{{ char | uri_escape }}{% endfor %}
