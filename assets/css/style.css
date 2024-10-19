@@ -61,6 +61,10 @@ main {
 
 main p {
   line-height: 150%;
+  margin: unset;
+}
+main p:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
 

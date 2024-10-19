@@ -11,6 +11,9 @@
     --visited-link-color:        #a237b7;
     --visited-hover-link-color:  #c148d2;
     --visited-active-link-color: #d43386;
+    --fresh-interact-color:      var(--highlight-bg-color);
+    --hover-interact-color:      #f1e1cc;
+    --active-interact-color:     var(--primary-bg-color);
   }
 }
 
@@ -27,6 +30,9 @@
     --visited-link-color:        #b57cd9;
     --visited-hover-link-color:  #b05fbb;
     --visited-active-link-color: #a248b4;
+    --fresh-interact-color:      #1b1621;
+    --hover-interact-color:      var(--highlight-bg-color);
+    --active-interact-color:     #302839;
   }
 }
 
