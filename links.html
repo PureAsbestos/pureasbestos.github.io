@@ -15,10 +15,21 @@ links:
       href: https://bsky.app/profile/pureasbestos.bsky.social
       icon: assets/img/social/bluesky.svg
 
+    - name: GitHub
+      href: https://github.com/pureasbestos
+      icon: assets/img/social/github.svg
+
+    - name: Itch.io
+      href: https://pureasbestos.itch.io
+      icon: assets/img/social/itchio.svg
+
+    - name: Ko-Fi
+      href: https://ko-fi.com/pureasbestos
+      icon: assets/img/social/kofi.svg
+
     - name: Twitter
       href: https://twitter.com/pureasbestos
       icon: assets/img/social/twitter.svg
-
 
 ---
 
@@ -71,5 +82,10 @@ links:
 
 <div class="social-links">
 {% for link in page.links %}
-    <a class="social-link" href="{{link.href}}" title="{{link.name}}">{% include_relative {{link.icon}} %}<div class="social-link-text-box"><span class="social-link-text">{{link.name}}</span></div></a>
+    <a class="social-link" href="{{link.href}}" title="{{link.name}}">
+        {% include_relative {{link.icon}} %}
+        <div class="social-link-text-box">
+            <span class="social-link-text">{{link.name}}</span>
+        </div>
+    </a>
 {% endfor %}
