@@ -69,4 +69,3 @@ whitelist:
 lsi: false
 safe: true
 jailed: true
-source: .
