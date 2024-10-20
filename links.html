@@ -5,19 +5,19 @@ layout: default
 links:
     - name: YouTube
       href: https://youtube.com/@pureasbestos
-      icon: youtube.svg.html
+      icon: assets/img/social/youtube.svg.html
 
     - name: Mastodon
       href: https://mastodon.gamedev.place/@pureasbestos
-      icon: mastodon.svg.html
+      icon: assets/img/social/mastodon.svg.html
 
     - name: Bluesky
       href: https://bsky.app/profile/pureasbestos.bsky.social
-      icon: bluesky.svg.html
+      icon: assets/img/social/bluesky.svg.html
 
     - name: Twitter
       href: https://twitter.com/pureasbestos
-      icon: twitter.svg.html
+      icon: assets/img/social/twitter.svg.html
 
 
 ---
@@ -71,5 +71,5 @@ links:
 
 <div class="social-links">
 {% for link in page.links %}
-    <a class="social-link" href="{{link.href}}" title="{{link.name}}">{% include {{link.icon}} %}<div class="social-link-text-box"><span class="social-link-text">{{link.name}}</span></div></a>
+    <a class="social-link" href="{{link.href}}" title="{{link.name}}">{% include_relative {{link.icon}} %}<div class="social-link-text-box"><span class="social-link-text">{{link.name}}</span></div></a>
 {% endfor %}
