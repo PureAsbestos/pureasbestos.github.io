@@ -5,35 +5,43 @@ layout: default
 links:
     - name: YouTube
       href: https://youtube.com/@pureasbestos
-      icon: assets/img/social/youtube.svg
+      icon: youtube.svg
 
     - name: Mastodon
       href: https://mastodon.gamedev.place/@pureasbestos
-      icon: assets/img/social/mastodon.svg
+      icon: mastodon.svg
 
     - name: Bluesky
-      href: https://bsky.app/profile/pureasbestos.bsky.social
-      icon: assets/img/social/bluesky.svg
+      href: https://bsky.app/profile/pureasbestos.com
+      icon: bluesky.svg
 
     - name: GitHub
       href: https://github.com/pureasbestos
-      icon: assets/img/social/github.svg
+      icon: github.svg
 
     - name: Itch.io
       href: https://pureasbestos.itch.io
-      icon: assets/img/social/itchio.svg
+      icon: itchio.svg
+
+    - name: Discord 
+      href: https://discord.gg/sVgeQrh2Qf
+      icon: discord.svg
+
+    - name: Lospec
+      href: https://lospec.com/pureasbestos
+      icon: lospec.svg
 
     - name: Ko-Fi
       href: https://ko-fi.com/pureasbestos
-      icon: assets/img/social/kofi.svg
+      icon: kofi.svg
 
     - name: SoundCloud
       href: https://soundcloud.com/pureasbestos
-      icon: assets/img/social/soundcloud.svg
+      icon: soundcloud.svg
 
     - name: Twitter
       href: https://twitter.com/pureasbestos
-      icon: assets/img/social/twitter.svg
+      icon: twitter.svg
 
 ---
 
@@ -67,10 +75,10 @@ links:
         color: var(--primary-text-color);
     }
 
-    svg {
+    .social-link > svg {
         width: 5rem;
         height: 5rem;}
-    path {
+    .social-link > svg * {
         fill: var(--primary-text-color) !important;
     }
 
@@ -89,7 +97,7 @@ links:
 <div class="social-links">
 {% for link in page.links %}
     <a class="social-link" href="{{link.href}}" title="{{link.name}}">
-        {% include_relative {{link.icon}} %}
+        {% include_relative assets/img/social/{{link.icon}} %}
         <div class="social-link-text-box">
             <span class="social-link-text">{{link.name}}</span>
         </div>
