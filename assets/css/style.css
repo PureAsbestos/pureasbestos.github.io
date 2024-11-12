@@ -17,7 +17,7 @@ a:link {
 } a:active {
   color: var(--active-link-color);
   text-decoration-line: underline;
-} a:visited {
+}/* a:visited {
   color: var(--visited-link-color);
   text-decoration-line: none;
 } a:visited:hover {
@@ -26,7 +26,7 @@ a:link {
 } a:visited:active {
   color: var(--visited-active-link-color);
   text-decoration-line: underline;
-}
+}*/
 
 
 h1 {
@@ -50,7 +50,40 @@ header {
   background-color: var(--highlight-bg-color);
   font-family: var(--title-font);
   font-weight: 700;
-  padding: 5px 25px 30px 25px;
+  padding: 1.5rem;
+}
+header h1 {
+  margin: unset;
+  line-height: 1.5rem;
+}
+
+/* navigation bar */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: 1.5rem;
+}
+nav a {
+  margin: unset;
+  padding-block: 0.25rem;
+  padding-inline: 4rem;
+  color: var(--primary-text-color) !important;
+}
+nav a:not(:last-child) {
+  border-right: solid 3px var(--active-interact-color);
+}
+nav a:link {
+/*  background-color: var(--fresh-interact-color);*/
+}
+nav a:hover {
+  background-color: var(--fresh-interact-color);/*  background-color: var(--hover-interact-color);*/
+  text-decoration-line: none;
+}
+nav a:active {
+  background: var(--active-interact-color);
+  text-decoration-line: none;
 }
 
 main {
