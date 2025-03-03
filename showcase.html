@@ -1,0 +1,7 @@
+---
+title: Showcase
+---
+{% for artwork in site.data.gallery.artworks %}
+	{% capture path %}{{ site.data.gallery.folder }}{{ artwork.file }}{% endcapture %}
+	{% include pixelart.html src=path target_scale=artwork.scale title=artwork.title %}
+{% endfor %}

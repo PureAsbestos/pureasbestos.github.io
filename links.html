@@ -1,52 +1,6 @@
 ---
 title: Links
 layout: default
-
-links:
-    - name: YouTube
-      href: https://youtube.com/@pureasbestos
-      icon: youtube.svg
-
-    - name: Bluesky
-      href: https://bsky.app/profile/pureasbestos.com
-      icon: bluesky.svg
-
-    - name: Twitch
-      href: https://twitch.tv/pureasbestos
-      icon: twitch.svg
-
-    - name: Mastodon
-      href: https://mastodon.gamedev.place/@pureasbestos
-      icon: mastodon.svg
-
-    - name: GitHub
-      href: https://github.com/pureasbestos
-      icon: github.svg
-
-    - name: Itch.io
-      href: https://pureasbestos.itch.io
-      icon: itchio.svg
-
-    - name: Discord 
-      href: https://discord.gg/sVgeQrh2Qf
-      icon: discord.svg
-
-    - name: Lospec
-      href: https://lospec.com/pureasbestos
-      icon: lospec.svg
-
-    - name: Ko-Fi
-      href: https://ko-fi.com/pureasbestos
-      icon: kofi.svg
-
-    - name: SoundCloud
-      href: https://soundcloud.com/pureasbestos
-      icon: soundcloud.svg
-
-    - name: Twitter
-      href: https://twitter.com/pureasbestos
-      icon: twitter.svg
-
 ---
 
 <style type="text/css">
@@ -99,7 +53,7 @@ links:
 
 
 <div class="social-links">
-{% for link in page.links %}
+{% for link in site.data.socials.links %}
     <a class="social-link" href="{{link.href}}" title="{{link.name}}">
         {% include_relative assets/img/social/{{link.icon}} %}
         <div class="social-link-text-box">

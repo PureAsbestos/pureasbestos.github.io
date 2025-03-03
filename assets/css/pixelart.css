@@ -1,0 +1,32 @@
+:root {
+    --device-pixel-ratio: 1.0;
+    --standard-scale: calc( 1px / var(--device-pixel-ratio) );
+}
+
+img.pixelart {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+
+    aspect-ratio: calc( var(--natural-width) / var(--natural-height) );
+
+
+
+    --calc-width: calc( var(--natural-width) * var(--standard-scale) * max( round(down, var(--device-pixel-ratio) * var(--target-scale)), 1) );
+    --calc-height: calc( var(--natural-height) * var(--standard-scale) * max( round(down, var(--device-pixel-ratio) * var(--target-scale)), 1) );
+
+    width: var(--calc-width);
+    height: var(--calc-height);
+}
+.pixelfig {
+    background: black;
+
+    width: calc(1px * var(--target-scale) * var(--natural-width));
+    height: calc(1px * var(--target-scale) * var(--natural-height));
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}

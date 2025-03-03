@@ -6,6 +6,9 @@ items:
 - text: About
   url: /about
 
+- text: Showcase
+  url: /showcase
+
 - text: Blog
   url: /blog
 

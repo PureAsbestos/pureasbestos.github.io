@@ -1,6 +1,7 @@
 @import "theme-styling.css";
 @import "fonts.css";
 @import "syntax-highlight.css";
+@import "pixelart.css";
 
 html, body {
   background-color: var(--primary-bg-color);

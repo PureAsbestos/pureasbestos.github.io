@@ -1,0 +1,19 @@
+
+folder: /assets/img/gallery/
+
+artworks:
+    - title: Goose & Chick
+      file: goose-n-chick.png
+      scale: 4
+
+    - title: Rosa at the Sea of Pixels
+      file: rosa-seaside.png
+      scale: 4
+
+    - title: Swordfish II
+      file: swordfish-ii.png
+      scale: 2
+
+    - title: Video Connectors
+      file: video-connectors.png
+      scale: 2
