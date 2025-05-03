@@ -39,6 +39,10 @@ links:
       href: https://soundcloud.com/pureasbestos
       icon: soundcloud.svg
 
+    - name: Bandcamp
+      href: https://bandcamp.com/pureasbestos
+      icon: bandcamp.svg
+
     - name: Twitter
       href: https://twitter.com/pureasbestos
       icon: twitter.svg
