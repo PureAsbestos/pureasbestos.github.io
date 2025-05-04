@@ -18,7 +18,7 @@ for (const el of art) {
 
 // sets the device pixel ratio css var
 function setPixelRatioCSS() {
-    document.documentElement.style.setProperty('--device-pixel-ratio', window.devicePixelRatio);
+    document.documentElement.style.setProperty('--device-pixel-ratio', window.visualViewport.scale * window.devicePixelRatio);
 }
 setPixelRatioCSS();
 
@@ -33,3 +33,9 @@ function listenOnDevicePixelRatio() {
     ).addEventListener("change", onChange, { once: true });
 }
 listenOnDevicePixelRatio();
+
+
+function visualViewportResized() {
+    setPixelRatioCSS();
+}
+window.visualViewport.addEventListener('resize', visualViewportResized);
