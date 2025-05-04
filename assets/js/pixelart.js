@@ -1,8 +1,17 @@
 let art = document.getElementsByClassName("pixelart");
 
+function setNaturalDims(img) {
+    img.parentElement.style.setProperty("--natural-width", img.naturalWidth);
+    img.parentElement.style.setProperty("--natural-height", img.naturalHeight);
+}
+
+
 for (const el of art) {
-    el.parentElement.style.setProperty("--natural-width", el.naturalWidth);
-    el.parentElement.style.setProperty("--natural-height", el.naturalHeight);
+    if (el.naturalWidth > 0 && el.naturalHeight > 0) {
+        setNaturalDims(el);
+    } else {
+        el.onload = (() => {setNaturalDims(el);})
+    }
 
 }
 
