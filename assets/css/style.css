@@ -60,16 +60,14 @@ header h1 {
 
 /* navigation bar */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  width: fit-content;
-  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
   margin-top: 1.5rem;
 }
 nav a {
   margin: unset;
   padding-block: 0.25rem;
-  padding-inline: 4rem;
+  text-align: center;
   color: var(--primary-text-color) !important;
 }
 nav a:not(:last-child) {
