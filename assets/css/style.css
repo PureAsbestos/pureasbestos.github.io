@@ -91,6 +91,7 @@ main {
   padding: 3rem;
   border: solid 3px var(--highlight-bg-color);
   font-family: var(--writing-font);
+  overflow: auto;
 }
 
 main p {
