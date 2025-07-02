@@ -9,13 +9,13 @@ html, body {
   margin: 0px;
 }
 
-a:link {
+a:link, a:visited {
   color: var(--fresh-link-color);
   text-decoration-line: none;
-} a:hover {
+} a:hover, a:visited:hover {
   color: var(--hover-link-color);
   text-decoration-line: underline;
-} a:active {
+} a:active, a:visited:active {
   color: var(--active-link-color);
   text-decoration-line: underline;
 }/* a:visited {
@@ -30,7 +30,7 @@ a:link {
 }*/
 
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
     font-weight: 700;
 }
@@ -58,6 +58,92 @@ header h1 {
   line-height: 1.5rem;
 }
 
+
+
+.bloglist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.blogitem {
+  padding: 1rem;
+  background-color: var(--fresh-interact-color);
+}
+.blogtaglist {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  gap: 0.5rem;
+}
+.blogtaglist > li {
+  padding: 0.25rem;
+  background: var(--content-bg-color);
+  border-radius: 0.25rem;
+}
+
+
+.blogitem h2 {
+  margin: 0rem;
+}
+.blogitem hgroup {
+  margin: 0rem;
+  margin-block-end: 0.5rem
+}
+article > h1 {
+  margin-block: 0rem 1.25rem;
+  font-size: 1.75rem;
+}
+
+/* post titles */
+hgroup > h1 {
+  margin: 0rem;
+}
+hgroup {
+  margin-block-end: 1.25rem;
+}
+hgroup > time {
+  color: var(--secondary-text-color);
+  font-size: smaller;
+}
+hr {
+  color: var(--secondary-text-color);
+  margin-block: 1.25rem;
+}
+
+input {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  caret-color: var(--primary-text-color);
+  font-family: var(--writing-font);
+
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+input:focus {
+  outline: var(--active-interact-color) solid 0.125rem;
+}
+input::placeholder {
+  font-family: var(--writing-font);
+  color: var(--secondary-text-color);
+}
+
+.previouspost {
+  float: left;
+  margin-bottom: 0 !important;
+}
+.nextpost {
+  float: right;
+  margin-bottom: 0 !important;
+}
+.postnavsep {
+  color: var(--highlight-bg-color);
+}
+
+
+
+
 /* navigation bar */
 nav {
   display: grid;
@@ -81,7 +167,7 @@ nav a:hover {
   text-decoration-line: none;
 }
 nav a:active {
-  background: var(--active-interact-color);
+  background-color: var(--active-interact-color);
   text-decoration-line: none;
 }
 
@@ -106,8 +192,11 @@ main p {
   line-height: 150%;
   margin: unset;
 }
-main p:not(:last-child) {
+main > article > :not(:last-child) {
   margin-bottom: 1rem;
+}
+main > article > :not(:has(~ :not(script))) {
+  margin-bottom: 0rem !important;
 }
 
 

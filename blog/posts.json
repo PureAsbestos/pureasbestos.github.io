@@ -1,0 +1,17 @@
+---
+layout: nothing
+---
+
+[
+	{% for post in site.posts %}{
+		"id": {{forloop.index0}},
+		"url": {{post.url | jsonify}},
+		"title": {{post.title | jsonify}},
+		"text": {{post.content | jsonify}},
+		"blurb": {{post.excerpt | jsonify}},
+		"date": {{post.date | date: "%Y-%m-%d" | jsonify}},
+		"date_text": {{ post.date | date_to_string: "ordinal", "US" | jsonify}},
+		"tags": {{post.tags | jsonify}}
+	}{% unless forloop.last %},
+	{% endunless %}{% endfor %}
+]

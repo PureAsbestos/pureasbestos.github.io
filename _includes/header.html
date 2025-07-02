@@ -2,7 +2,7 @@
   <h1>PureAsbestos</h1>
   <nav>
     {% for item in site.data.nav.items %}
-      <a href="{{ item.url }}">{{ item.text }}</a>
+      <a href="{{ item.url }}"{% assign test_var = page.url | slice: 0, item.url.size %}{% if page.url == item.url or item.url.size > 1 and test_var == item.url %} style="background: var(--active-interact-color);"{% endif %}>{{ item.text }}</a>
     {% endfor %}
   </nav>
 </header>
