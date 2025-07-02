@@ -69,3 +69,5 @@ whitelist:
 lsi: false
 safe: true
 jailed: true
+
+excerpt_separator: <!--end-blurb-->
