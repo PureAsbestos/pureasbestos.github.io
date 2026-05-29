@@ -149,15 +149,18 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
   margin-top: 1.5rem;
+  overflow: clip;
 }
 nav a {
   margin: unset;
   padding-block: 0.25rem;
   text-align: center;
   color: var(--primary-text-color) !important;
+  box-shadow: -3px 0 0 0 var(--active-interact-color);
 }
-nav a:not(:last-child) {
-  border-right: solid 3px var(--active-interact-color);
+nav a:last-child {
+  box-shadow: -3px 0 0 0 var(--active-interact-color),
+        inset -3px 0 0 0 var(--highlight-bg-color);
 }
 nav a:link {
 /*  background-color: var(--fresh-interact-color);*/
