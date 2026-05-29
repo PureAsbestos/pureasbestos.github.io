@@ -192,10 +192,10 @@ main p {
   line-height: 150%;
   margin: unset;
 }
-main > article > :not(:last-child) {
+main > article > :not(:last-child, dialog) {
   margin-bottom: 1rem;
 }
-main > article > :not(:has(~ :not(script))) {
+main > article > :not(:has(~ :not(script)), dialog) {
   margin-bottom: 0rem !important;
 }
 
@@ -263,4 +263,67 @@ main.notfound {
 
 .notfound h1 {
     font-size: 4rem;
+}
+
+
+
+button {
+  background: var(--fresh-interact-color);
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
+}
+button:hover {
+    background: var(--hover-interact-color);
+}
+button:active {
+    background: var(--active-interact-color);
+}
+
+dialog {
+  font-family: inherit;
+  background: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background: var(--content-bg-color);
+  overflow: clip;
+  border: solid 3px var(--highlight-bg-color);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+dialog button[value="close"] {
+  background-color: transparent;
+  border: none;
+  float: right;
+  font-weight: bold;
+  color: inherit;
+
+}
+dialog button[value="close"]:hover {
+  color: var(--secondary-text-color);
+}
+
+.pseudo-at-symbol:before {
+  content: "\FF20";
+}
+
+.email-address {
+  white-space: nowrap;
+}
+
+#contact-dialog {
+  min-inline-size: 25%;
+}
+
+#contact-dialog-contents {
+  background-color: var(--code-block-bg-color);
+  overflow: auto;
+  max-width: fit-content;
+  padding: 0.25rem 0.5rem 0.35rem 0.5rem;
 }

@@ -5,7 +5,8 @@ custom_css: links.css
 ---
 
 <div class="social-links">
-{% for link in site.data.socials.links %}
+{% for item in site.data.socials %}
+    {% assign link = item[1] %}
     <a class="social-link" href="{{link.href}}" title="{{link.name}}">
         {% include_relative assets/img/social/{{link.icon}} %}
         <div class="social-link-text-box">

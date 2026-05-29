@@ -4,8 +4,13 @@
 
 @media (prefers-color-scheme: dark) {
 
-	code, .highlight { background-color: #09060d; color: var(--primary-text-color) }	/* Applies to container/everything */
-	code span.line:before { color: #877b91 }											/* Applies to line numbers */
+	:root {
+		--code-block-bg-color: #09060d;
+		--code-block-line-number-color: #877b91;
+	}
+
+	code, .highlight { background-color: var(--code-block-bg-color); color: var(--primary-text-color) } /* Applies to container/everything */
+	code span.line:before { color: var(--code-block-line-number-color) } /* Applies to line numbers */
 
 	:root {
 		--monokai-denoter: #49483e;
@@ -23,8 +28,13 @@
 
 @media (prefers-color-scheme: light) {
 
-	code, .highlight { background-color: #ffffff; color: var(--primary-text-color) }	/* Applies to container/everything */
-	code span.line:before { color: #6a5c56 }											/* Applies to line numbers */
+	:root {
+		--code-block-bg-color: #ffffff;
+		--code-block-line-number-color: #6a5c56;
+	}
+
+	code, .highlight { background-color: var(--code-block-bg-color); color: var(--primary-text-color) } /* Applies to container/everything */
+	code span.line:before { color: var(--code-block-line-number-color) } /* Applies to line numbers */
 
 	:root {
 		--monokai-denoter: #49483e;
@@ -40,9 +50,9 @@
 	}
 }
 
-.highlight .hll { background-color: var(--monokai-denoter) }								/* Highlighted line */
-.highlight .c   { color: var(--monokai-comment) }											/* Comment */
-.highlight .err { color: var(--monokai-errorfg); background-color: var(--monokai-errorbg) }	/* Error */
+.highlight .hll { background-color: var(--monokai-denoter) } /* Highlighted line */
+.highlight .c   { color: var(--monokai-comment) }	/* Comment */
+.highlight .err { color: var(--monokai-errorfg); background-color: var(--monokai-errorbg) } /* Error */
 .highlight .k   { color: var(--monokai-keyword) }	/* Keyword */
 .highlight .l   { color: var(--monokai-literal) }	/* Literal */
 .highlight .n   { color: var(--monokai-default) }	/* Name */
