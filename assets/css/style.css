@@ -3,6 +3,10 @@
 @import "syntax-highlight.css";
 @import "pixelart.css";
 
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
 html, body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
