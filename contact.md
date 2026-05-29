@@ -1,5 +1,6 @@
 ---
 title: Contact
+noindex: true
 ---
 
 # How to contact me

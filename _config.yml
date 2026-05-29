@@ -66,6 +66,10 @@ whitelist:
   - jekyll-octicons
   - jekyll-remote-theme
 
+plugins:
+  - jekyll-sitemap
+
+
 lsi: false
 safe: true
 jailed: true
