@@ -177,6 +177,11 @@ nav a:active {
   background-color: var(--active-interact-color);
   text-decoration-line: none;
 }
+nav a:focus-visible {
+  outline-offset: -3px;
+  margin-right: 3px;
+  border-left: solid 3px transparent;
+}
 
 main {
   padding: 3rem;
